@@ -9,7 +9,7 @@ public class Ejercicio5 {
 		Scanner sc = new Scanner(System.in);
 		
 		
-		int num, respuesta, numaux;
+		int num, respuesta, mayor=0, menor=0;
 		
 		
 		System.out.println("Piense un numero del 1 al 100 y lo adivinare");
@@ -24,8 +24,20 @@ public class Ejercicio5 {
 			System.out.println("(igual-> 3)");
 			respuesta = sc.nextInt();
 			
-			numaux=num;
 			
+			
+			if(respuesta==1&&num<mayor) {
+				mayor=num;
+			}else if(respuesta==2&&num>menor) {
+				menor=num;
+			}
+			
+			do {
+				num = (int) (Math.random()*100+1);
+			}while(num>=mayor&&num<=menor);
+			
+			
+			/*
 			if(respuesta==1) {
 				
 				do {
@@ -39,7 +51,7 @@ public class Ejercicio5 {
 				}while(num>=numaux);
 			
 			}
-			
+			*/
 			
 		}while(respuesta!=3);
 		
